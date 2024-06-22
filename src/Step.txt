@@ -1,0 +1,329 @@
+//Dice Roller App
+
+1. Delete all code from App.js and App.css
+
+2. Add the code on App.js:
+
+import React from 'react';
+import './App.css';
+
+const App=()=> 
+    {
+    return(
+      
+    <h1>0</h1>
+    );
+    }
+
+export default App;
+
+3. Write a code to show image 1:
+
+
+//App.js and delete all code from App.js and App.css
+import React from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    return(
+      <div>
+        <img src='imgs/img1.jpg'></img>
+      </div>
+    );
+    
+    }
+
+export default App;
+
+//It doesnot shown.
+
+4. Write a code to show image 1 using  require:
+
+
+//App.js and delete all code from App.js and App.css
+import React from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    return(
+      <center>
+        <div>
+        <img width={250} height={250} src={require('./imgs/img1.jpg')}></img>
+      </div>
+      </center>
+    );
+    
+    }
+
+export default App;
+
+5. Create a button on App.js:
+
+
+//App.js and delete all code from App.js and App.css
+import React from 'react';
+
+
+//App.js and delete all code from App.js and App.css
+import React from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    return(
+      <div>
+      <center>
+        
+        <img width={250} height={250} src={require('./imgs/img1.jpg')}></img>
+
+        <button className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+
+6. Create style on App.css:
+
+.App {
+  text-align: center;
+  
+
+}
+
+.button
+{
+  background-color: blue;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 30px;
+  border: none;
+  margin: 8px;
+  border-radius: 6px;
+}
+
+7. Give a break between image and button:
+
+
+//App.js and delete all code from App.js and App.css
+import React from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    return(
+      <div>
+      <center>
+        
+        <img width={250} height={250} src={require('./imgs/img1.jpg')}></img>
+
+        <br></br> <br/>
+        <button className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+8. Use useState for image to change with number:
+
+
+//App.js and delete all code from App.js and App.css
+import React, { useState } from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    
+const [diceNumber, setDiceNumber] = useState(2);
+    return(
+      <div>
+      <center>
+        
+        <img width={400} height={400} src={require(`./imgs/${diceNumber}.jpg`)}></img>
+
+        <br></br> <br/>
+        <button className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+9. Create a function to generate random Number for diceNumber and call diceNumber:
+
+//App.js and delete all code from App.js and App.css
+import React, { useState } from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    
+const [diceNumber, setDiceNumber] = useState(1);
+
+//Generate  Random Number from 0 to 6.
+//  return Math.floor(Math.random() * (max - min) + min);
+const refreshDice =()=>
+  {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber(randomNumber);
+  }
+    return(
+      <div>
+      <center>
+        
+        <img width={400} height={400} src={require(`./imgs/${diceNumber}.jpg`)}></img>
+
+        <br></br> <br/>
+        <button className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+10. Apply Generated Number during onClick:
+
+
+//App.js and delete all code from App.js and App.css
+import React, { useState } from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    
+const [diceNumber, setDiceNumber] = useState(6);
+
+//Generate  Random Number from 0 to 6.
+//  return Math.floor(Math.random() * (max - min) + min);
+const refreshDice =()=>
+  {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber(randomNumber);
+  }
+    return(
+      <div>
+      <center>
+        
+        <img width={400} height={400} src={require(`./imgs/${diceNumber}.jpg`)}></img>
+
+        <br></br> <br/>
+        <button onClick= {()=>refreshDice() } className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+11. Change cursor of button like hand:
+
+.App {
+  text-align: center;
+  
+
+}
+
+.button
+{
+  background-color: blue;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 30px;
+  border: none;
+  margin: 8px;
+  border-radius: 6px;
+  cursor:pointer;
+}
+
+12. 6 Dice Roller code:
+
+
+//App.js and delete all code from App.js and App.css
+import React, { useState } from 'react';
+
+import './App.css';
+
+const App=()=> 
+    {
+    
+const [diceNumber1, setDiceNumber1] = useState(6);
+const [diceNumber2, setDiceNumber2] = useState(6);
+const [diceNumber3, setDiceNumber3] = useState(6);
+const [diceNumber4, setDiceNumber4] = useState(6);
+const [diceNumber5, setDiceNumber5] = useState(6);
+const [diceNumber6, setDiceNumber6] = useState(6);
+
+//Generate  Random Number from 0 to 6.
+//  return Math.floor(Math.random() * (max - min) + min);
+const refreshDice =()=>
+  {
+    const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber1(randomNumber1);
+    const randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber2(randomNumber2);
+    const randomNumber3 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber3(randomNumber3);
+    const randomNumber4 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber4(randomNumber4);
+    const randomNumber5 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber5(randomNumber5);
+    const randomNumber6 = Math.floor(Math.random() * 6) + 1;
+    setDiceNumber6(randomNumber6);
+  }
+    return(
+      <div>
+      <center>
+        
+        <img width={200} height={200} src={require(`./imgs/${diceNumber1}.jpg`)}></img>
+        <img width={200} height={200} src={require(`./imgs/${diceNumber2}.jpg`)}></img>
+        <img width={200} height={200} src={require(`./imgs/${diceNumber3}.jpg`)}></img>
+        <br/> <br/> <br/>
+        <img width={200} height={200} src={require(`./imgs/${diceNumber4}.jpg`)}></img>
+        <img width={200} height={200} src={require(`./imgs/${diceNumber5}.jpg`)}></img>
+        <img width={200} height={200} src={require(`./imgs/${diceNumber6}.jpg`)}></img>
+
+        <br></br> <br/>
+        <button onClick= {()=>refreshDice() } className='button'>ROLL</button>
+      
+      </center>
+      </div>
+
+    );
+    
+    }
+
+export default App;
+
+
